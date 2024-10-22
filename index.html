@@ -133,9 +133,11 @@
       transform: rotate(45deg);
       /* Equal to rotateZ(45deg) */
     }
-    #audio{
+
+    #audio {
       opacity: 0%;
     }
+
     /* Estilos dos Popups */
     .popup {
       background-color: #e0e0e0;
@@ -203,7 +205,14 @@
     .fotinha {
       width: 10%;
       height: 10%;
-      z-index: 2;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .fotinha {
+        width: 30%;
+        height: 30%;
+        
+      }
     }
 
     #modal-container {
@@ -212,12 +221,15 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* Fundo escurecido */
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Fundo escurecido */
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 100; /* Garante que o modal fica em cima do conteúdo */
-      display: none; /* Inicia o modal como oculto */
+      z-index: 100;
+      /* Garante que o modal fica em cima do conteúdo */
+      display: none;
+      /* Inicia o modal como oculto */
     }
 
     #modal {
@@ -253,7 +265,7 @@
     <div id="modal">
       <h2 style="color:#d02090;">Bem-vinda</h2>
       <p style="color:#d02090;">Para que tudo corra bem, clique no botão abaixo.</p><br>
-      <button id="close-modal" onclick="playSound()"> 💖 Clica aqui 💖  </button>
+      <button id="close-modal" onclick="playSound()"> 💖 Clica aqui 💖 </button>
     </div>
   </div>
   <!-- Container popups-->
@@ -268,7 +280,8 @@
       <div class="corpo-popup">
         <br>
         <h2 class="animate__animated animate__fadeIn">Você aceita um convite? 💖 <div>
-        </div></h2>
+          </div>
+        </h2>
         <!--<h4 class="texto-popup">Você aceita?</h4>-->
         <button class="animate__animated animate__shakeX animate__infinite	infinite animate__slow"
           onclick="showPopup('popup2')">Simmmm</button>
@@ -305,7 +318,7 @@
       <p class="texto-popup">Seja bem vinda aos anos 90/2000</p>
       <h2>Espero por você!</h2>
       <br>
-      <!--<img class="fotinha" src="https://i.imgur.com/pHefJV5.png" alt="Folder">-->
+      <img class="fotinha" src="https://i.imgur.com/pHefJV5.png" alt="Folder">
       <p class="animate__animated animate__headShake animate__infinite animate__slow"><a
           href="https://chat.whatsapp.com/J5LZseKFN6lEHQu1aGyai0">Entre no grupo do Whats</a></p>
     </div>
@@ -362,20 +375,21 @@
     popup.classList.add('hide');
   }
   function playSound() {
-  var sound = document.getElementById("audio");
-  sound.play();
-}
- // Mostra o modal ao carregar a página
- window.onload = function() {
+    var sound = document.getElementById("audio");
+    sound.play();
+  }
+  // Mostra o modal ao carregar a página
+  window.onload = function () {
     document.getElementById('modal-container').style.display = 'flex';
   };
 
   // Fecha o modal e remove o escurecimento ao clicar no botão
-  document.getElementById('close-modal').addEventListener('click', function() {
+  document.getElementById('close-modal').addEventListener('click', function () {
     document.getElementById('modal-container').style.display = 'none';
   });
- 
+
 </script>
+
 </html>
 </body>
 
